@@ -23,7 +23,7 @@ export default function App({}: Props) {
       <div>state = {state1}</div>
       <My_component   label = "Password"/>
       <My_component   label = "รหัส"/>
-      <My_component   label = "Test GIT"/>
+      <My_component   label = "Test GIT1"/>
     </div>
   );
   
