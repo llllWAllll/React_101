@@ -21,9 +21,8 @@ export default function App({}: Props) {
       <div>var1 = {var2}</div>
       <div>var1 = {var3 ? "lek" : "kan"}</div>
       <div>state = {state1}</div>
-      <My_component   label = "Password"/>
-      <My_component   label = "รหัส"/>
-      <My_component   label = "Test GIT6"/>
+      <My_component   label = "Password" btnLabel="Submit" onSubmit={result => alert(result)}/>
+    
     </div>
   );
   
