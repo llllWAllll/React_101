@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+// type Props = {
+//     label:string;
+//     btnLabel ?: string;
+// };
 
 export default function My_component(props:any) {
+  let message = "";
+
   return (
     <div>
-      <form>
-        <label>
-          {props.label}:
-        </label>
+      <form onSubmit={() => alert(message)}>
+        <label> {props.label}: </label>
+        <br/>
+        <input type="text" name="your_message" id="your_message" onChange={(event => {message =  event.target.value})} />
         <br />
-        <input type="text" name="your_message"
-        id="your_message" />
-        <br />
-        <button>Submit</button>
+        <button>{props.btnLabel ? props.btnLabel : "OK"}</button>
       </form>
     </div>
   );
