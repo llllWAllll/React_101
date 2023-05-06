@@ -1,26 +1,15 @@
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import Header from './components/layout/Header';
-import Header1 from './components/layout/Header';
 import Menu from './components/layout/Menu';
+import LoginPage from './components/page/LoginPage';
+import RegisterPage from './components/page/RegisterPage';
+import StockPage from './components/page/StockPage';
+import { Route, Routes } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -92,9 +81,18 @@ export default function PersistentDrawerLeft() {
       <Menu open={open} handleDrawerClose = {handleDrawerClose}/>
       <Main open={open}>
         <DrawerHeader />
-        <Typography paragraph>
-           CODETS TEST
-        </Typography>
+        <Routes>
+          
+          <Route path="/" 
+          element={<Navigate to="/login" />} />
+          <Route path="/login" 
+          element={<LoginPage />} />
+
+          <Route path="/register" element={<RegisterPage/>} />
+
+          <Route path="/stock" 
+          element={<StockPage/>} />
+        </Routes>
       </Main>
     </Box>
   );
