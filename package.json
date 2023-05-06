@@ -1,5 +1,5 @@
 {
-  "name": "cmreactjs_101",
+  "name": "react_101",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,6 +16,7 @@
     "@mui/styled-engine-sc": "^5.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.1",
     "styled-components": "^5.3.10"
   },
   "devDependencies": {
