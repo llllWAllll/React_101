@@ -76,7 +76,7 @@ export default function Menu({open,handleDrawerClose}:MenuProps) {
   const navigate = useNavigate();
   
   const navigateTo = (text:string) => {
-    navigate("/register")
+    navigate("/"+text.toLowerCase());
   };
 
   return (
