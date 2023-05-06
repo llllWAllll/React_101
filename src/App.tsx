@@ -18,8 +18,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import Menu from './components/layout/Menu';
 import Header from './components/layout/Header';
+import Header1 from './components/layout/Header';
+import Menu from './components/layout/Menu';
 
 const drawerWidth = 240;
 
@@ -87,11 +88,13 @@ export default function PersistentDrawerLeft() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <Header/>
-      <Menu/>
+      <Header open={open} handleDrawerOpen={handleDrawerOpen}/>
+      <Menu open={open} handleDrawerClose={handleDrawerClose}/>
       <Main open={open}>
         <DrawerHeader />
-        <Typography>Content</Typography>
+        <Typography paragraph>
+           asCM
+        </Typography>
       </Main>
     </Box>
   );

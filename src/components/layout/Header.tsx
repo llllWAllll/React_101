@@ -70,34 +70,27 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-export default function Header() {
+type HeaderProps = {};
+
+export default function Header({open,handleDrawerOpen}:any) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
-  return (
-    <AppBar position="fixed" open={open}>
-    <Toolbar>
-      <IconButton
-        color="inherit"
-        aria-label="open drawer"
-        onClick={handleDrawerOpen}
-        edge="start"
-        sx={{ mr: 2, ...(open && { display: 'none' }) }}
-      >
-        <MenuIcon />
-      </IconButton>
-      <Typography variant="h6" noWrap component="div">
-        Persistent drawer
-      </Typography>
-    </Toolbar>
-  </AppBar>
+ 
+ return (
+  <AppBar position="fixed" open={open}>
+  <Toolbar>
+    <IconButton
+      color="inherit"
+      aria-label="open drawer"
+      onClick={handleDrawerOpen}
+      edge="start"
+      sx={{ mr: 2, ...(open && { display: 'none' }) }}
+    >
+      <MenuIcon />
+    </IconButton>
+    <Typography variant="h6" noWrap component="div">
+      Persistent drawer
+    </Typography>
+  </Toolbar>
+</AppBar>
   );
 }
